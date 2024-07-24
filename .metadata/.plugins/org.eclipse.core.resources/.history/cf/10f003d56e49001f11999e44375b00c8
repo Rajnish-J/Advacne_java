@@ -1,0 +1,16 @@
+package Step_1;
+import java.sql.*;
+
+public class code_1 {
+	public static void main(String[] args) {
+		try {
+			// load the Driver or registered driver
+			java.sql.Driver d = new com.mysql.cj.jdbc.Driver();
+			
+			DriverManager.registerDriver(d);
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
