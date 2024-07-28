@@ -1,0 +1,28 @@
+package Insert_query;
+
+import java.sql.*;
+
+public class code_1 {
+	public static void main(String[] args) {
+		try {
+			// load the driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			// establish Connection
+			Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/student_db", "root", "root");
+			
+			// create statement
+			Statement s = c.createStatement(); // return --> new statementImpl();
+			
+			// execute query
+			s.executeUpdate("insert into section_a values (5,'Sakthi Dinesh','sakthidineshece@gmail.com',8124286445,342)");
+			
+			// close the connection
+			c.close();
+			
+		}
+		catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
